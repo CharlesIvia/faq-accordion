@@ -61,3 +61,38 @@ section {
   display: none;
 }
 
+.answer {
+  max-height: 0;
+  overflow: hidden;
+  position: relative;
+  background-color: #212838;
+  transition: max-height 650ms;
+}
+
+.answer::before {
+  content: "";
+  position: absolute;
+  width: 0.4rem;
+  height: 90%;
+  background: #8fc460;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.answer p {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.6);
+  padding: 2rem;
+}
+
+.accordion-item:target .answer {
+  max-height: 20rem;
+}
+
+.accordion-item:target .accordion-link .add {
+  display: none;
+}
+.accordion-item:target .accordion-link .remove {
+  display: block;
+}
